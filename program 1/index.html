@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functional calculator</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: top 50px;
+        }
+        input,select,button{
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        #result{
+            margin: top 20px;
+            font-size:20px;
+            font-weight: bold;
+            color:darkblue;
+
+        }
+    </style>
+</head>
+<body>
+    <h2>functional calculator</h2>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter Second number">
+    <br>
+    <select id="operation">
+        <operation value="add">Add(+)</operation>
+        <operation value="Subraction">Subraction(-)</operation>
+        <operation value="Multipication">Multipication(*)</operation>
+        <operation value="Modulas">Modulas(/)</operation>
+        </select>
+        <button onclick = "calculate()">Calculate</button>
+        <div id="result">Result</div>
+        <script>
+            function Calculate(){
+                const num1=paraseFloat(document.getElementById("num1").value);
+                const num2=paraseFloat(document.getElementById("num2").value);
+                const operation=document.getElementById("operation").value;
+                let result;
+                if(isNaN(num1)||isNaN(num2)){
+                    result="Please enter vaild numbers!";
+                }
+                else{
+                    switch(operation){
+                        case "add":
+                            result=num1+num2;
+                            break;
+                        case "Subract":
+                            result=num1-num2;
+                            break;
+                            case "Mulitply":
+                            result=num1*num2;
+                            break;
+                        case "Divide":
+                            if(num2==0)
+                            {
+                                result="cannot divide by zero!";
+                                break;
+                            }
+                        else{
+                            result="Invalid operation!";
+                            }
+                            default:
+                                result="Invaild opration!";
+                }
+
+            }
+            dounment.getElementById("result").innerText="Result"+result;
+        }
+        </script>
+    
+</body>
+</html>
