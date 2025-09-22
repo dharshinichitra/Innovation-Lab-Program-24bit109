@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="registrationform" onsubmit=" return validateForm()">
+            <h2>Registration Form</h2>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required>
+        <div id="nameerror" class="error"></div>
+        <br /><br />
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+        <div id="emailerror" class="error"></div>
+        <br /><br />
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <div id="passworderror" class="error"></div>
+        <br /><br />
+        <label for="phone">Phonenumber:</label>
+        <input type="text" name="phone" id="phone" required>
+        <div id="nameerror" class="error"></div>
+        <br /><br />
+
+        <button type="submit">Submit</button>
+    </form>
+    <script src="./validate.js"></script>
+    
+</body>
+</html>
